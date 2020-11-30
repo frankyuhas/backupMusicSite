@@ -1,0 +1,256 @@
+
+<img src="/images/rails_logo.jpeg" id="titleImg" alt="rails_logo"/>
+<br/>
+<br/>
+<h1>What is Ruby on Rails?</h1>
+
+<br/>
+
+<p>Ruby on Rails, or Rails, is a server-side web application framework written in Ruby under the MIT License. Rails is a model–view–controller framework, providing default structures for a database, a web service, and web pages.</p>
+
+<br/>
+
+<h1>History of Ruby on Rails</h1>
+
+<br/>
+
+<p>Ruby on Rails was originally extraceted from work done on Basecamp, a web-based project management tool, by David Heinemeier Hansson. He released the framework as open-source in 2004, but did not initially share commit rights until 2005. The framework gained notoriety when Apple decide to ship it with Mac OS X v10.5 in 2007. Since its release it has seen a large amount of upgrades and improvements the frameworks functionality. Introducing gems, templates, engines, Rack and nested model forms in 2009. This added functionality made Rails an intuitive and user friendly framework, that can create beautiful functional webpages quickly.</p>
+
+<br/>
+
+<h1>Why did we choose Rails?</h1>
+
+<p>Most sites that users are interacting with implement a simple CRUD(Create, Read, Update, and Destroy) structure. Sites like Twitter, Facebook, Instagram and Reddit, follow this structure. Users create a post, read other posts, update tehir status, and delete posts. Rails' functionality is invaluable in creating these types of sites(as you'll see in our tutorial). With simple command line executions we are able to create whole CRUD structures. Rails automatically generates the files, routes, and functions necessary to make these types of sites quickly and easily.</p>
+
+
+<br/>
+
+<p>For our site, we wanted to create a CRUD application that allows users to seek out new music releases, get more information, update the reviews with their opinions or add new songs to the site, and to delete their previous reviews. With Rails we are able to create a beautiful and effective app in this style, easily.</p>
+
+<br/>
+<br/>
+
+<h1 id='setup'>How to setup Rails</h1>
+
+<br/>
+
+<p>Unfortunately, Rails was originally developed to be used with Mac's. So Windows installation is a little more difficult than on Mac.</p>
+
+<br/>
+
+<h3>What you will need before installing Ruby on Rails</h3>
+
+<br/>
+
+<ul>
+	<li><a href="https://nodejs.org/en/download/">Node.js</a></li>
+	<li><a href="https://classic.yarnpkg.com/en/docs/install#windows-stable">Yarn</a></li>
+	<li><a href="https://git-scm.com/downloads">Git Bash</a></li>
+</ul>
+
+<br/>
+
+<p>*Install of these with the default settings*</p>
+
+
+<h3>Now we can use the Rails installer</h3>
+
+<p>Rails installer is great for getting us necessary software we need to use Ruby on Rails(Bundler Sqlite, TinyTDS, etc.). However, the versions of Ruby and Rails that come with this installer are out of date, so we will have to update them later.</p>
+
+
+<ul>
+	<li><a href="http://railsinstaller.org/en">Rails Installer</a></li>
+</ul>
+
+
+<p>Download and install the package containing Ruby version 2.3. Following all of the default prompts.</p>
+
+<br/>
+
+<h3>Now we can update Ruby</h3>
+
+<br/>
+
+<p>Go to <a href="https://rubyinstaller.org/downloads/">rubyinstaller.org</a> to download the latest version of Ruby.</p>
+<p>The most recent, stable version is highlighted in bold. Follow all of teh default prompts, making sure everything is checked.</p>
+<p>This will update the old version of Ruby we installed with Rails installer.</p>
+
+
+<br/>
+
+<h3>No let's update Rails</h3>
+
+<br/>
+
+<p>Open the Git Bash terminal and run the "gem install rails" command.</p>
+
+<br/>
+
+<div class="card" style="width: 25rem;">
+  <img src="/images/rails_install.png" class="card-img-top" alt="rails_install">
+  <div class="card-body">
+    <p class="card-text">When installed it will look like this.</p>
+  </div>
+</div>
+
+<br/>
+<br/>
+
+<h3>Now lets make a test project and run the server to see if our install worked</h1>
+
+<br/>
+
+<p>First we need to make a directory for our projects. We are going to place it in our C drive.</p>
+
+<div class="shadow-sm p-3 mb-5 bg-light rounded">$ mkdir /c/musicReviewSite</div>
+
+
+<p>Next let's navigate into our new folder.</p>
+
+<div class="shadow-sm p-3 mb-5 bg-light rounded">$ cd /c/musicReviewSite/</div>
+
+
+<p>Now that we are in the correct directory, lets make our project. </p>
+
+<div class="shadow-sm p-3 mb-5 bg-light rounded">$ rails new musicReviewSite</div>
+
+<p>This command will create the necessary skeleton of our project.</p>
+
+<div class="card" style="width: 25rem;">
+  <img src="/images/new_site.png" class="card-img-top" alt="new_site">
+  <div class="card-body">
+    <p class="card-text">You should see this message when complete.</p>
+  </div>
+</div>
+
+<br/>
+
+<p>Now let's navigate into our new project</p>
+
+<div class="shadow-sm p-3 mb-5 bg-light rounded">$ cd musicReviewSite/</div>
+
+<p>And now we can initialize the server to see if it works.</p>
+
+<div class="shadow-sm p-3 mb-5 bg-light rounded">$ rails s</div>
+
+<div class="card" style="width: 25rem;">
+  <img src="/images/server.png" class="card-img-top" alt="server">
+  <div class="card-body">
+    <p class="card-text">This output means the server is working.</p>
+  </div>
+</div>
+
+<br/>
+
+<p>In your browser enter: </p>
+<div class="shadow-sm p-3 mb-5 bg-light rounded">localhost:3000</div>
+
+
+<div class="card" style="width: 25rem;">
+  <img src="/images/rails_welcome.png" class="card-img-top" alt="welcome">
+  <div class="card-body">
+    <p class="card-text">If you see this landing page, Congratulations! You made your first Rails site.</p>
+  </div>
+</div>
+
+
+<br/>
+<br/>
+
+<h1 id='setup'>Now we can start building our site</h1>
+
+<br/>
+
+<p>We need to have a few things open to work on our project</p>
+
+<ul>
+	<li>Open your new project in Sublime Text</li>
+	<li>Run the rails server for your site so you can see updates in real time</li>
+	<li>Another Git Bash terminal in our site directory, to add new components</li>
+</ul>
+
+<br/>
+
+<p>When opening your project in Sublime you'll see Rails has created a number of folders and files for us</p>
+
+<br/> 
+
+<img src="/images/sublime_folders.png">
+
+<div class="d-inline-flex p-2 bd-highlight">- We will mostly be using the App, Config, and DB folders. Along with the Gemfile</div>
+
+<br/>
+<br/>
+
+<h3>Now we need to create a Controller and a View for our homepage</h3>
+
+<p>Remember from earlier, Rails is an MVC framework. The Model being our database, Views are our actual pages we create, and Controllers execute the requests from our application. So to start we need at minimum a Controller and a view.</p>
+
+<p>So we want to create a Controller and a View for our homepage. To do this Rails has generate helper files that we can use to easily generate the things we need.</p>
+
+<p>So navigate to the Git Bash terminal for our musicReviewSite directory and execute the following command. </p>
+
+<br/> 
+
+<div class="shadow-sm p-3 mb-5 bg-light rounded">$ rails generate controller home index</div>
+
+
+<div class="card" style="width: 25rem;">
+  <img src="/images/rails_generate.png" class="card-img-top" alt="generate_home">
+  <div class="card-body">
+    <p class="card-text">Rails has now executed all of these commands, creating the necessary files we need.</p>
+  </div>
+</div>
+
+<br/>
+
+<h3>Now lets navigate to our newly created homepage.</h3>
+
+<br/>
+
+<div class="card" style="width: 25rem;">
+  <img src="/images/new_homepage.png" class="card-img-top" alt="new_homepage">
+  <div class="card-body">
+    <p class="card-text">We should see a page that looks like this.</p>
+  </div>
+</div>
+
+<p>Lets make this our root page. To do this we have to change the route. In Rails routes allow us to navigate to a specific page based on http requests.</p>
+<p>To do this lets go to our text editor and open config/routes.rb.</p>
+
+<div class="card" style="width: 25rem;">
+  <img src="/images/rails_homeroute.png" class="card-img-top" alt="homeroute">
+  <div class="card-body">
+    <p class="card-text">The routes file should look like this.</p>
+  </div>
+</div>
+
+<br/>
+
+<p>To make our new page our root, we need to edit this file. First comment our the line "get 'home/index'". Then add: </p>
+
+<div class="shadow-sm p-3 mb-5 bg-light rounded">root 'home#index'</div>
+
+<p>When comeplete 'localhost:3000' should now bring us right to our homepage.</p>
+
+<p>Now we can edit our homepage and add whatever we like.</p>
+
+<br/>
+<br/>
+
+<h1 id='setup'>Developing our homepage and adding a nav bar</h1>
+
+<p>In order to start developing a styling our webpage we need to open the 'application.html.erb' file. This file is located inside app/views/layouts folder.
+This file is essentially our base template for all of our webpages. We can use this file to keep consistency with our site, while also making it dynamic. </p>
+
+<div class="card" style="width: 25rem;">
+  <img src="/images/application.png" class="card-img-top" alt="application">
+  <div class="card-body">
+    <p class="card-text">Your application,html.erb file should look something like this.</p>
+  </div>
+</div>
+
+<br/>
+
+
+<p> In this file you'll notice a 'yield' tag, surrounded by '<%= %>'. This tag is used for embedding ruby. This tag is here for us to output the content we create for our other pages within the blueprint that Rails has created for us</p>
