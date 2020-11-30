@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_155508) do
+ActiveRecord::Schema.define(version: 2020_11_30_194753) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 2020_11_30_155508) do
   create_table "albums", force: :cascade do |t|
     t.string "title"
     t.string "artist"
-
     t.string "songs"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -58,13 +57,16 @@ ActiveRecord::Schema.define(version: 2020_11_30_155508) do
     t.integer "page_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["page_id"], name: "index_image_elements_on_page_id"
   end
 
-  create_table "image_elements", force: :cascade do |t|
-    t.integer "page_id", null: false
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["page_id"], name: "index_image_elements_on_page_id"
+    t.integer "user_id"
+    t.integer "album_id"
   end
 
   create_table "songs", force: :cascade do |t|
