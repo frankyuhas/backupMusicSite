@@ -1,4 +1,4 @@
-class AddAttachmentAlbumImgToAlbums < ActiveRecord::Migration[4.2]
+class AddAttachmentAlbumImgToAlbums < ActiveRecord::Migration[6.0]
   def self.up
     change_table :albums do |t|
       t.attachment :album_img
