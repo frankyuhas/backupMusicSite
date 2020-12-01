@@ -2,8 +2,17 @@
 
 <h1 class="current-category"><%= params[:category] %></h1>
 
-<% @albums.each do |album| %>
-	<h2><%= link_to album.title, album_path(album) %></h2>
-<% end %> 
+
+<div class="row">
+	<% @albums.each do |album| %>
+		<!-- <h2><%= link_to album.title, album_path(album) %></h2> -->
+
+	
+		<a href="/albums/<%= album.id %>", style="width:300px; height:auto">
+			<%= image_tag(album.image, style:'width:300px', class: "album") %>
+		</a>
+	
+	<% end %> 
+</div>
 
 <%= link_to "Add Album", new_album_path %>
