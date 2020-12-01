@@ -20,7 +20,7 @@ class AlbumsController < ApplicationController
 	def create
 		@album = current_user.albums.build(album_params)
 		@album.category_id = params[:category_id]
-		@album.album_img = params[:album_img]
+
 		if @album.save 
 			redirect_to root_path
 		else
@@ -34,7 +34,7 @@ class AlbumsController < ApplicationController
 
 	def update
 		@album.category_id = params[:category_id]
-		@album.album_img = params[:album_img]
+		
 		if @album.update(album_params)
 			redirect_to album_path(@album)
 		else
@@ -50,7 +50,7 @@ class AlbumsController < ApplicationController
 	private
 
 		def album_params
-			params.require(:album).permit(:title, :artist, :songs, :category_id, :album_img)
+			params.require(:album).permit(:title, :artist, :songs, :category_id)
 		end
 
 		def find_album

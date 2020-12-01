@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :songs
-  resources :albums
+  resources :albums do
+  	resources :reviews
+  end
   #get 'home/index'
   get 'home/about'
   root 'home#index'
