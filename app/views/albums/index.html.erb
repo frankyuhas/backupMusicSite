@@ -9,7 +9,7 @@
 
 	
 		<a href="/albums/<%= album.id %>", style="width:300px; height:auto">
-			<%= image_tag(album.image, style:'width:300px', class: "album") %>
+			<%= image_tag(album.image, style:'width:300px', class: "album") if album.image.attached? %>
 		</a>
 	
 	<% end %> 

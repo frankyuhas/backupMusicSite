@@ -21,7 +21,7 @@ class AlbumsController < ApplicationController
 		@album = current_user.albums.build(album_params)
 		@album.category_id = params[:category_id]
 
-		if @album.save 
+		if @album.save
 			redirect_to root_path
 		else
 			render 'new'
